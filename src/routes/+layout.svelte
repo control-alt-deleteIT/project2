@@ -2,9 +2,9 @@
     import "../app.css";
   
     let navItems = [
-      { name: "Home", href: "/home" },
-      { name: "Events", href: "/events" },
-      { name: "Contacts", href: "/contacts" },
+      { name: "Home", href: "/project2/home" },
+      { name: "Events", href: "/project2/events" },
+      { name: "Contacts", href: "/project2/contacts" },
     ];
   </script>
   
