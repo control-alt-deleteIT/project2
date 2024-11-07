@@ -2,8 +2,8 @@
   import "../app.css";
 
   let navItems = [
-    { name: "Home", href: "/home", icon: "fas fa-home", label: "Home" },
-    { name: "Events", href: "/events", icon: "fas fa-calendar", label: "Events" },
+    { name: "Home", href: "/project2/home", icon: "fas fa-home", label: "Home" },
+    { name: "Events", href: "/project2/events", icon: "fas fa-calendar", label: "Events" },
   ];
 </script>
 
