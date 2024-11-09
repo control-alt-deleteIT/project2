@@ -82,7 +82,7 @@
 ></div>
 
 <div class="bg-white rounded-lg p-8 shadow-lg relative z-10 w-full max-w-md">
-    <h2 class="text-2xl font-semibold mb-4">Create Event</h2>
+    <h2 class="text-2xl font-semibold mb-4">Add Event</h2>
 
     {#if step === 1}
         <input type="text" class="border p-2 w-full rounded mb-2" placeholder="Name..." bind:value={formData.name} />
@@ -126,9 +126,9 @@
             <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded" on:click={previousStep}>Back</button>
         {/if}
         {#if step < 3}
-            <button class="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700" on:click={nextStep}>Next</button>
+        <button class="bg-[#f7941d] text-white px-4 py-2 rounded" on:click={nextStep}>Next</button>
         {:else}
-            <button class="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700" on:click={submitForm}>Create Event</button>
+        <button class="bg-[#f7941d] text-white px-4 py-2 rounded" on:click={submitForm}>Create Event</button>
         {/if}
         <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded" on:click={onClose}>Cancel</button>
     </div>

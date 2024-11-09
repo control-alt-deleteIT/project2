@@ -1,7 +1,11 @@
 <script>
-  import "../app.css";
+  import "../app.css"; 
 </script>
 
+<svelte:head>
+  <title>EventNex</title> 
+</svelte:head>
+
 <main>
-  <slot />
+  <slot></slot>
 </main>
