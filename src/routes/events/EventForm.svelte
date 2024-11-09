@@ -1,6 +1,4 @@
 <script lang="ts">
-    import './events.css';
-
     export let onClose: () => void;
     export let existingEvents: { name: string; startDate: string; endDate: string; time: string }[] = [];
     let step = 1;
@@ -65,7 +63,6 @@
         if (validateStep()) {
             console.log('Form submitted:', formData);
             onClose();
-            
             addEvent(formData);
         }
     }
@@ -75,58 +72,64 @@
     }
 </script>
 
-<div class="modal-backdrop" on:click={onClose} on:keydown={(event) => event.key === 'Enter' && onClose()} role="button" tabindex="0" aria-label="Close event form"></div>
+<div
+    class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center"
+    role="button"
+    tabindex="0"
+    aria-label="Close Modal"
+    on:click={onClose}
+    on:keydown={(event) => event.key === 'Enter' && onClose()}
+></div>
 
-<div class="modal">
-    <h2>Create Event</h2>
+<div class="bg-white rounded-lg p-8 shadow-lg relative z-10 w-full max-w-md">
+    <h2 class="text-2xl font-semibold mb-4">Create Event</h2>
 
     {#if step === 1}
-        <input type="text" class="input-field" placeholder="Name..." bind:value={formData.name} />
-        {#if errors.name}<p class="error">{errors.name}</p>{/if}
+        <input type="text" class="border p-2 w-full rounded mb-2" placeholder="Name..." bind:value={formData.name} />
+        {#if errors.name}<p class="text-red-500 text-sm">{errors.name}</p>{/if}
 
-        <input type="text" class="input-field" placeholder="Contact Number..." bind:value={formData.contactNumber} />
-        {#if errors.contactNumber}<p class="error">{errors.contactNumber}</p>{/if}
+        <input type="text" class="border p-2 w-full rounded mb-2" placeholder="Contact Number..." bind:value={formData.contactNumber} />
+        {#if errors.contactNumber}<p class="text-red-500 text-sm">{errors.contactNumber}</p>{/if}
     {/if}
 
     {#if step === 2}
-        <input type="email" class="input-field" placeholder="Email..." bind:value={formData.email} />
-        {#if errors.email}<p class="error">{errors.email}</p>{/if}
+        <input type="email" class="border p-2 w-full rounded mb-2" placeholder="Email..." bind:value={formData.email} />
+        {#if errors.email}<p class="text-red-500 text-sm">{errors.email}</p>{/if}
 
-        <div class="date-time">
-            <div class="date-container">
-                <p>Start Date</p>
-                <input type="date" class="input-field" bind:value={formData.startDate} />
-                {#if errors.startDate}<p class="error">{errors.startDate}</p>{/if}
-            </div>
-            <div class="date-container">
-                <p>End Date</p>
-                <input type="date" class="input-field" bind:value={formData.endDate} />
-                {#if errors.endDate}<p class="error">{errors.endDate}</p>{/if}
-                {#if errors.dateRange}<p class="error">{errors.dateRange}</p>{/if}
-                {#if errors.dateOverlap}<p class="error">{errors.dateOverlap}</p>{/if}
-            </div>
+        <div class="flex flex-col">
+            <label for="startDate" class="text-sm font-semibold mb-1">Start Date</label>
+            <input id="startDate" type="date" class="border p-2 rounded mb-2" bind:value={formData.startDate} />
+            {#if errors.startDate}<p class="text-red-500 text-sm">{errors.startDate}</p>{/if}
+        </div>
+        <div class="flex flex-col">
+            <label for="endDate" class="text-sm font-semibold mb-1">End Date</label>
+            <input id="endDate" type="date" class="border p-2 rounded mb-2" bind:value={formData.endDate} />
+            {#if errors.endDate}<p class="text-red-500 text-sm">{errors.endDate}</p>{/if}
+            {#if errors.dateRange}<p class="text-red-500 text-sm">{errors.dateRange}</p>{/if}
+            {#if errors.dateOverlap}<p class="text-red-500 text-sm">{errors.dateOverlap}</p>{/if}
         </div>
     {/if}
 
     {#if step === 3}
-        <p>Enter Time</p>
-        <input type="time" class="input-field" bind:value={formData.time} />
-        {#if errors.time}<p class="error">{errors.time}</p>{/if}
+    <label for="time" class="text-sm font-semibold">Enter Time</label>
+    <input id="time" type="time" class="border p-2 w-full rounded mb-2" bind:value={formData.time} />
+    {#if errors.time}<p class="text-red-500 text-sm">{errors.time}</p>{/if}
 
-        <select class="input-field" bind:value={formData.eventType}>
+        <select class="border p-2 w-full rounded mb-2" bind:value={formData.eventType}>
             <option disabled value="">Type of Event...</option>
+            <!-- Event types can be added here -->
         </select>
     {/if}
 
-    <div class="buttons">
+    <div class="flex gap-2 mt-4">
         {#if step > 1}
-            <button class="cancel-button" on:click={previousStep}>Back</button>
+            <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded" on:click={previousStep}>Back</button>
         {/if}
         {#if step < 3}
-            <button class="create-button" on:click={nextStep}>Next</button>
+            <button class="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700" on:click={nextStep}>Next</button>
         {:else}
-            <button class="create-button" on:click={submitForm}>Create Event</button>
+            <button class="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700" on:click={submitForm}>Create Event</button>
         {/if}
-        <button class="cancel-button" on:click={onClose}>Cancel</button>
+        <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded" on:click={onClose}>Cancel</button>
     </div>
 </div>
