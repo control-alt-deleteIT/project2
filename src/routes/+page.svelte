@@ -1,5 +1,3 @@
-
-
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,29 +8,37 @@
  
  <body class="bg-gradient-to-r from-black via-[#0A1E3A] to-black min-h-screen m-0 p-0">
   <!-- Navbar -->
- <div class="fixed w-full h-20 top-0 px-8 flex items-center justify-between bg-transparent z-10 py-2 transition-all duration-300">
-   <!-- Logo on the Left with Link to Home -->
-   <div class="logo">
-     <a href="/">
-        <img src="/logo.png" alt="EventNex Logo" class="w-24 h-auto" /> <!-- Reduced logo size -->
-     </a>
-   </div>
- 
-   <!-- Buttons on the Right -->
-   <div class="flex space-x-3">
-     <!-- Dashboard Button -->
-     <a href="/project2/home" aria-label="Go to Dashboard" class="flex items-center text-[#FFFFFF] font-semibold text-base px-3 py-1.5 rounded-lg hover:text-white transition">
+  <div class="fixed w-full h-20 top-0 px-8 flex items-center justify-between bg-transparent z-10 py-2 transition-all duration-300">
+    <!-- Logo on the Left with Link to Home -->
+    <div class="logo">
+      <a href="/">
+        <img src="/logo.png" alt="EventNex Logo" class="w-24 h-auto" />
+      </a>
+    </div>
+  
+    <!-- Navigation Links on the Right -->
+    <div class="flex gap-4">
+      <!-- Home Link -->
+      <a
+        href="/project2/home"
+        class="flex items-center text-[#FFFFFF] text-xl font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:text-[#f7941d] hover:bg-[#ffffff22]"
+        aria-label="Go to Dashboard"
+      >
         <i class="fas fa-home mr-2 text-[#f7941d]"></i>
         <span>Dashboard</span>
-     </a>
- 
-     <!-- Events Button -->
-     <a href="/project2/events" aria-label="View Events" class="flex items-center text-[#FFFFFF] font-semibold text-base px-3 py-1.5 rounded-lg hover:text-white transition">
+      </a>
+  
+      <!-- Events Link -->
+      <a
+        href="/project2/events"
+        class="flex items-center text-[#FFFFFF] text-xl font-semibold px-3 py-2 rounded-lg transition-all duration-300 hover:text-[#f7941d] hover:bg-[#ffffff22]"
+        aria-label="View Events"
+      >
         <i class="fas fa-calendar-alt mr-2 text-[#f7941d]"></i>
         <span>Events</span>
-     </a>
-   </div>
- </div>
+      </a>
+    </div>
+  </div>
  
  
    <!-- Main content container -->
