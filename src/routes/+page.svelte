@@ -21,13 +21,13 @@
    <!-- Buttons on the Right -->
    <div class="flex space-x-3">
      <!-- Dashboard Button -->
-     <a href="/home" aria-label="Go to Dashboard" class="flex items-center text-[#FFFFFF] font-semibold text-base px-3 py-1.5 rounded-lg hover:text-white transition">
+     <a href="/project2/home" aria-label="Go to Dashboard" class="flex items-center text-[#FFFFFF] font-semibold text-base px-3 py-1.5 rounded-lg hover:text-white transition">
         <i class="fas fa-home mr-2 text-[#f7941d]"></i>
         <span>Dashboard</span>
      </a>
  
      <!-- Events Button -->
-     <a href="/events" aria-label="View Events" class="flex items-center text-[#FFFFFF] font-semibold text-base px-3 py-1.5 rounded-lg hover:text-white transition">
+     <a href="/project2/events" aria-label="View Events" class="flex items-center text-[#FFFFFF] font-semibold text-base px-3 py-1.5 rounded-lg hover:text-white transition">
         <i class="fas fa-calendar-alt mr-2 text-[#f7941d]"></i>
         <span>Events</span>
      </a>
